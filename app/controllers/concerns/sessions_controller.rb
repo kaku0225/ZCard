@@ -4,8 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if User.login(params[:user])
-      session[:user9527] = params[:user][:email]
+    user = User.login(params[:user])
+    if user
+      session[:user9527] = user.id
       redirect_to root_path, notice:'登入成功'
     else
       redirect_to session_path, notice:'登入失敗'
