@@ -1,4 +1,7 @@
 class RegistrationsController < ApplicationController
+  
+  before_action :session_required, only:[:edit, :update]
+
 
   def new
     @user = User.new

@@ -14,5 +14,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :boards
+  resources :boards do
+    resources :posts, shallow: true
+  end
 end
