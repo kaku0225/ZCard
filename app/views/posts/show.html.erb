@@ -8,3 +8,25 @@
 </article>
 
 <%= link_to '回上一頁' , :back %>
+
+<%= form_for(@comment, url: post_comments_path(@post), remote: true) do |form| %>
+
+  <%= form.text_area :content,placeholder: '請輸入留言' %>
+  <%= form.submit '送出' %>
+
+<% end %>
+
+
+<!-- # <ul class="comment">
+# <% @comments.each do |comment| %>
+#     <%= render "comments/comment", comment: comment %>
+# <% end %>
+# </ul> -->
+
+
+<ul class= "comment" >
+  <%= render @comments %>
+</ul>
+
+<!-- # <%= render partial: "comments/comment", collection: @comments %> -->
+

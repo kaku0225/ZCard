@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   resources :boards do
     resources :posts, shallow: true
   end
+
+  resources :posts, only:[] do
+    resources :comments, shallow: true, only: [:create, :destroy]
+  end
 end
