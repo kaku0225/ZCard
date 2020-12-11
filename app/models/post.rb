@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  acts_as_paranoid
+  
   belongs_to :board
   belongs_to :user
   has_many :comments
