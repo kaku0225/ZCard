@@ -1,5 +1,5 @@
 class BoardPolicy < ApplicationPolicy
-  def hide?(board)
+  def hide?
     user && user.role == 'bm' && record.user == user
   end
 
