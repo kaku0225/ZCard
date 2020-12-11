@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
 
   def show
+
     @comment = Comment.new
     @comments = @post.comments.includes(:user).page(params[:page]).per(10)
   end
